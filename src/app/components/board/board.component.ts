@@ -25,14 +25,7 @@ export class BoardComponent implements OnInit {
   constructor(private readonly boardService: BoardService) {}
 
   ngOnInit(): void {
-    this.board = this.boardService.getRandomboard().map((column) =>
-      column.map((song) => {
-        return {
-          song,
-          toggled: false,
-        };
-      })
-    );
+    this.initialize();
   }
 
   public checkBoard() {
@@ -42,5 +35,23 @@ export class BoardComponent implements OnInit {
         this.hasColumnBingo.emit();
       }
     });
+  }
+
+  private initialize() {
+    const board = localStorage.getItem('board');
+
+    if (board) {
+      this.board = JSON.parse(board);
+    } else {
+      this.board = this.boardService.getRandomboard().map((column) =>
+        column.map((song) => {
+          return {
+            song,
+            toggled: false,
+          };
+        })
+      );
+      localStorage.setItem('board', JSON.stringify(this.board));
+    }
   }
 }
