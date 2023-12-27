@@ -1,4 +1,7 @@
 <div class="container">
-  <h1>Manko</h1>
+  <div class="header">
+    <h1>Manko</h1>
+    <button (click)="reset()">Reset</button>
+  </div>
   <app-board (hasColumnBingo)="showDialog()"></app-board>
 </div>

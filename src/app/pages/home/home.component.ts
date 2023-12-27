@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
   public showDialog() {
     this.dialog.open(BankoDialogComponent);
   }
+
+  public reset() {
+    localStorage.setItem('board', '');
+  }
 }
