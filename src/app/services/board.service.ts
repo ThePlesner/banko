@@ -12,13 +12,13 @@ export class BoardService {
     const allSongs = this.dataService.getAllSongs();
     const board = [];
 
-    let row = [];
+    let column = [];
     for (let i = 0; i < allSongs.length; i++) {
-      row.push(allSongs[i]);
+      column.push(allSongs[i]);
 
       if ((i + 1) % 5 === 0) {
-        board.push(row);
-        row = [];
+        board.push(column);
+        column = [];
       }
     }
     return board;

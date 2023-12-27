@@ -1,8 +1,9 @@
 .grid-container {
   display: flex;
-  flex-direction: column;
 }
 
-.row {
+.column {
   display: flex;
+  flex: 1;
+  flex-direction: column;
 }

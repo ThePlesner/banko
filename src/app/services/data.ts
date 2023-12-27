@@ -19,9 +19,4 @@ export const songs: Song[] = [
   { title: 'Wonderwall', artist: 'Oasis' },
   { title: 'Radioactive', artist: 'Imagine Dragons' },
   { title: 'Shallow', artist: 'Lady Gaga, Bradley Cooper' },
-  { title: 'Stairway to Heaven', artist: 'Led Zeppelin' },
-  { title: 'Wrecking Ball', artist: 'Miley Cyrus' },
-  { title: 'Sicko Mode', artist: 'Travis Scott' },
-  { title: 'The Box', artist: 'Roddy Ricch' },
-  { title: 'Neon', artist: 'John Mayer' },
 ];
