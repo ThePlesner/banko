@@ -5,20 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoardComponent } from './components/board/board.component';
 import { HomeComponent } from './pages/home/home.component';
-import { GridCellComponent } from './components/grid-cell/grid-cell.component';
+import { BoardCellComponent } from './components/board-cell/board-cell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     HomeComponent,
-    GridCellComponent
+    BoardCellComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

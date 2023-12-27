@@ -1,3 +1,5 @@
 <section class="grid-container">
-  
+  <div class="row" *ngFor="let row of board">
+    <app-board-cell *ngFor="let cell of row" [songTitle]="cell.title"></app-board-cell>
+  </div>
 </section>

@@ -1,0 +1,4 @@
+<div class="cell-container" (click)="toggleCell()">
+  <span *ngIf="!toggled">{{ songTitle }}</span>
+  <img *ngIf="toggled" src="/assets/murk.png" class="murk-image">
+</div>

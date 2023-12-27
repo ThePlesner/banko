@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from 'src/app/services/board.service';
+import { Song } from 'src/app/services/data';
 
 @Component({
   selector: 'app-board',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
-  constructor() {}
+  public board: Song[][] = [];
 
-  ngOnInit(): void {}
+  constructor(private readonly boardService: BoardService) {}
+
+  ngOnInit(): void {
+    this.board = this.boardService.getRandomboard();
+    console.log(this.board);
+  }
 }
