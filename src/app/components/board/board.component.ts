@@ -29,7 +29,6 @@ export class BoardComponent implements OnInit {
   }
 
   public checkBoard() {
-    console.log(this.board);
     this.board.forEach((column) => {
       if (column.every((cell) => cell.toggled)) {
         this.hasColumnBingo.emit();

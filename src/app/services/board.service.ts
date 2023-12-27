@@ -13,7 +13,7 @@ export class BoardService {
     const board = [];
 
     let column = [];
-    for (let i = 0; i < allSongs.length; i++) {
+    for (let i = 0; i <= 15; i++) {
       column.push(allSongs[i]);
 
       if ((i + 1) % 5 === 0) {
