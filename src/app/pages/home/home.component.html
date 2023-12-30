@@ -1,7 +1,18 @@
 <div class="container">
   <div class="header">
-    <h1>Manko</h1>
-    <button (click)="reset()">Reset</button>
+    <span class="header-text"> Manko </span>
+    <!-- <button (click)="reset()">Reset</button> -->
+    <div class="round-buttons">
+      @for (button of roundButtons; track $index) {
+      <div
+        (click)="toggleRoundButton(button)"
+        class="round-button"
+        [ngClass]="{'toggled-button': button.toggled, 'round-one': button.id === 1 && button.toggled, 'round-two': button.id === 2 && button.toggled, 'round-three': button.id === 3 && button.toggled,}"
+      >
+        <span>{{ button.label }}</span>
+      </div>
+      }
+    </div>
   </div>
-  <app-board (hasColumnBingo)="showDialog()"></app-board>
+  <app-board [roundId]="toggledId" (hasColumnBingo)="showDialog()"></app-board>
 </div>

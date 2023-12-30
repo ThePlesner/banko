@@ -4,4 +4,36 @@
 
 .header {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.round-buttons {
+  display: flex;
+  align-items: center;
+
+  .round-button {
+    padding: 10px;
+  }
+}
+
+.header-text {
+  font-size: 20px;
+}
+
+.toggled-button {
+  background-color: #9d44b5;
+  color: white;
+}
+
+.round-one {
+  background-color: var(--round-one-color);
+}
+
+.round-two {
+  background-color: var(--round-two-color);
+}
+
+.round-three {
+  background-color: var(--round-three-color);
 }

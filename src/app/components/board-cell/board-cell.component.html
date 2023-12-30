@@ -1,6 +1,9 @@
 <div class="cell-container" (click)="toggleCell()">
   @if (toggled) {
-  <img *ngIf="toggled" src="/assets/murk.png" class="murk-image" />
+  <img src="/assets/murk.png" class="murk-image" />
+  <div class="song-title-overlay">
+    <span>{{ cell.song.title }}</span>
+  </div>
   } @else {
   <span class="song-title" *ngIf="!toggled">{{ cell.song.title }}</span>
   }

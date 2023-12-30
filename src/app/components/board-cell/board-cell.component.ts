@@ -13,14 +13,32 @@ export class BoardCellComponent {
   @Input()
   public cell!: SongCell;
 
+  @Input()
+  public toggled: boolean = false;
+
   @Output()
   public cellToggled = new EventEmitter<boolean>();
-
-  public toggled: boolean = false;
 
   public toggleCell() {
     this.toggled = !this.toggled;
     this.cell.toggled = this.toggled;
     this.cellToggled.emit();
+
+    const board = localStorage.getItem('board');
+
+    if (board) {
+      const parsedBoard = JSON.parse(board);
+
+      for (const column of parsedBoard) {
+        for (const cell of column) {
+          if (this.cell.song.title === cell.song.title) {
+            cell.toggled = !cell.toggled;
+            break;
+          }
+        }
+      }
+
+      localStorage.setItem('board', JSON.stringify(parsedBoard));
+    }
   }
 }

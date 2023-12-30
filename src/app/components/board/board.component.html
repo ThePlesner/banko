@@ -1,8 +1,8 @@
 <div class="grid-container">
   @for (column of board; track column){
-    <div class="column">
+    <div class="column" [ngClass]="{'round-one': roundId === 1, 'round-two': roundId === 2, 'round-three': roundId === 3}">
       @for (cell of column; track $index) {
-        <app-board-cell [cell]="cell" (cellToggled)="checkBoard()"></app-board-cell>
+        <app-board-cell [toggled]="cell.toggled" [cell]="cell" (cellToggled)="checkBoard()"></app-board-cell>
       }
     </div>
   }

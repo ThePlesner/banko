@@ -6,4 +6,17 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  color: white;
+}
+
+.round-one {
+  background-color: var(--round-one-color);
+}
+
+.round-two {
+  background-color: var(--round-two-color);
+}
+
+.round-three {
+  background-color: var(--round-three-color);
 }

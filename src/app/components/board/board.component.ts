@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BoardService } from 'src/app/services/board.service';
 import { Song } from 'src/app/services/data';
 import { BoardCellComponent } from '../board-cell/board-cell.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 
 export interface SongCell {
   song: Song;
@@ -14,9 +14,12 @@ export interface SongCell {
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   standalone: true,
-  imports: [BoardCellComponent, CommonModule],
+  imports: [BoardCellComponent, CommonModule, NgClass],
 })
 export class BoardComponent implements OnInit {
+  @Input()
+  public roundId: number = 1;
+
   @Output()
   public hasColumnBingo = new EventEmitter();
 
@@ -29,11 +32,16 @@ export class BoardComponent implements OnInit {
   }
 
   public checkBoard() {
-    this.board.forEach((column) => {
+    let bingoCounter = 0;
+    for (const column of this.board) {
       if (column.every((cell) => cell.toggled)) {
-        this.hasColumnBingo.emit();
+        bingoCounter++;
       }
-    });
+      if (bingoCounter === this.roundId) {
+        this.hasColumnBingo.emit();
+        break;
+      }
+    }
   }
 
   private initialize() {
