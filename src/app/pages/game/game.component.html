@@ -1,13 +1,8 @@
 <div class="container">
   <div class="header">
-    <h1>Manko</h1>
+    <span class="lobby-name">{{ lobbyName }}</span>
     <div class="reset-button">
       <button (click)="reset()">Reset</button>
-    </div>
-    <div class="round-buttons">
-      <button>Runde 1</button>
-      <button>Runde 2</button>
-      <button>Runde 3</button>
     </div>
   </div>
   <app-board (hasColumnBingo)="showDialog()"></app-board>

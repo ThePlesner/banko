@@ -3,6 +3,8 @@ import { BoardService } from 'src/app/services/board.service';
 import { Song } from 'src/app/services/data';
 import { BoardCellComponent } from '../board-cell/board-cell.component';
 import { CommonModule } from '@angular/common';
+import { map, take, tap } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 export interface SongCell {
   song: Song;
@@ -22,7 +24,10 @@ export class BoardComponent implements OnInit {
 
   public board: SongCell[][] = [];
 
-  constructor(private readonly boardService: BoardService) {}
+  constructor(
+    private readonly boardService: BoardService,
+    private readonly route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.initialize();
@@ -37,20 +42,49 @@ export class BoardComponent implements OnInit {
   }
 
   private initialize() {
-    const board = localStorage.getItem('board');
+    const boards = localStorage.getItem('boards');
+    let parsedBoards: { [key: string]: SongCell[][] } = {};
+
+    if (boards) {
+      parsedBoards = JSON.parse(boards);
+    }
+
+    const id = (this.route.snapshot.params['id'] as string) ?? '';
+
+    let board = undefined;
+
+    if (boards && parsedBoards[id]) {
+      board = parsedBoards[id];
+    }
 
     if (board) {
-      this.board = JSON.parse(board);
+      this.board = board;
     } else {
-      this.board = this.boardService.getRandomboard().map((column) =>
-        column.map((song) => {
-          return {
-            song,
-            toggled: false,
-          };
-        })
-      );
-      localStorage.setItem('board', JSON.stringify(this.board));
+      this.boardService
+        .getRandomboard()
+        .pipe(
+          take(1),
+          map((board) => {
+            return board.map((column) =>
+              column.map((cell) => {
+                return {
+                  song: cell,
+                  toggled: false,
+                };
+              })
+            );
+          }),
+          tap((board) => {
+            this.board = board;
+
+            if (parsedBoards) {
+              parsedBoards[id] = this.board;
+            }
+
+            localStorage.setItem('boards', JSON.stringify(parsedBoards));
+          })
+        )
+        .subscribe();
     }
   }
 }

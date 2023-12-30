@@ -15,7 +15,6 @@ export class BoardCellComponent {
 
   @Output()
   public cellToggled = new EventEmitter<boolean>();
-
   public toggled: boolean = false;
 
   public toggleCell() {

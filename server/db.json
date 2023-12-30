@@ -1,0 +1,212 @@
+{
+  "games": {
+    "65f3f506-a557-453b-88ce-050ac9176084": {
+      "gameId": "65f3f506-a557-453b-88ce-050ac9176084",
+      "lobbyName": "",
+      "users": [
+        {
+          "id": "274f84fb-c370-4eb7-bc31-997e027ac6ce"
+        },
+        {
+          "id": "acebbf42-d3c3-42a7-bf0e-a026451f5701"
+        },
+        {
+          "id": "79911762-a4e5-4d19-89ae-62b76305e27e"
+        },
+        {
+          "id": "79911762-a4e5-4d19-89ae-62b76305e27e"
+        },
+        {
+          "id": "98b7780e-3b8c-4d50-a9be-3618237af9c7"
+        },
+        {
+          "id": "8e3ad14c-38bf-4958-afec-42609b7fb559"
+        },
+        {
+          "id": "8e3ad14c-38bf-4958-afec-42609b7fb559"
+        },
+        {
+          "id": "5b4dce81-8653-4f11-87c7-6f37242bfc63"
+        },
+        {
+          "id": "a15d23cf-54e1-4db8-91d9-2591439609b5"
+        },
+        {
+          "id": "793c0be4-e013-4b15-888d-ca259a28175b"
+        }
+      ]
+    },
+    "25f343c8-b01c-4147-b93b-3e028ed615b4": {
+      "gameId": "25f343c8-b01c-4147-b93b-3e028ed615b4",
+      "lobbyName": "asdf",
+      "users": [
+        {
+          "id": "1fdeb8a9-5903-4c32-9c9c-afba31d3bd4e"
+        }
+      ]
+    },
+    "0e5bb728-2ec5-4113-a8c8-534c19ed7610": {
+      "gameId": "0e5bb728-2ec5-4113-a8c8-534c19ed7610",
+      "lobbyName": "asdf",
+      "users": []
+    }
+  },
+  "songs": [
+    {
+      "title": "Wonderchild"
+    },
+    {
+      "title": "Stor mand"
+    },
+    {
+      "title": "Maneater"
+    },
+    {
+      "title": "Ung Kniv"
+    },
+    {
+      "title": "Respect"
+    },
+    {
+      "title": "Love on top"
+    },
+    {
+      "title": "Tilbud"
+    },
+    {
+      "title": "Bet on it"
+    },
+    {
+      "title": "Love will keep you warm"
+    },
+    {
+      "title": "Locked out of heaven"
+    },
+    {
+      "title": "When love takes over"
+    },
+    {
+      "title": "Neonlys"
+    },
+    {
+      "title": "Flammer rammer"
+    },
+    {
+      "title": "Gimme more"
+    },
+    {
+      "title": "Menneskesøn"
+    },
+    {
+      "title": "Senorita"
+    },
+    {
+      "title": "Turn red"
+    },
+    {
+      "title": "Say so"
+    },
+    {
+      "title": "All my love"
+    },
+    {
+      "title": "Dance the night"
+    },
+    {
+      "title": "Toxicty"
+    },
+    {
+      "title": "Love song"
+    },
+    {
+      "title": "Take 5"
+    },
+    {
+      "title": "Tju bang chokolademand"
+    },
+    {
+      "title": "Intet stopper helt"
+    },
+    {
+      "title": "Dancing queen"
+    },
+    {
+      "title": "Speed dance"
+    },
+    {
+      "title": "Fat bottomed girls"
+    },
+    {
+      "title": "Passionfruit"
+    },
+    {
+      "title": "Mean"
+    },
+    {
+      "title": "Piger med pistoler"
+    },
+    {
+      "title": "What makes you beautiful"
+    },
+    {
+      "title": "Starboy"
+    },
+    {
+      "title": "Drenge som mig"
+    },
+    {
+      "title": "LA DANZA"
+    },
+    {
+      "title": "Fireflies"
+    },
+    {
+      "title": "Hey shorty"
+    }
+  ],
+  "65f3f506-a557-453b-88ce-050ac9176084": {
+    "gameId": "65f3f506-a557-453b-88ce-050ac9176084",
+    "lobbyName": "",
+    "users": [
+      {
+        "id": "274f84fb-c370-4eb7-bc31-997e027ac6ce"
+      },
+      {
+        "id": "acebbf42-d3c3-42a7-bf0e-a026451f5701"
+      },
+      {
+        "id": "79911762-a4e5-4d19-89ae-62b76305e27e"
+      },
+      {
+        "id": "79911762-a4e5-4d19-89ae-62b76305e27e"
+      },
+      {
+        "id": "98b7780e-3b8c-4d50-a9be-3618237af9c7"
+      },
+      {
+        "id": "8e3ad14c-38bf-4958-afec-42609b7fb559"
+      },
+      {
+        "id": "8e3ad14c-38bf-4958-afec-42609b7fb559"
+      },
+      {
+        "id": "5b4dce81-8653-4f11-87c7-6f37242bfc63"
+      },
+      {
+        "id": "a15d23cf-54e1-4db8-91d9-2591439609b5"
+      },
+      {
+        "id": "793c0be4-e013-4b15-888d-ca259a28175b"
+      }
+    ]
+  },
+  "25f343c8-b01c-4147-b93b-3e028ed615b4": {
+    "gameId": "25f343c8-b01c-4147-b93b-3e028ed615b4",
+    "lobbyName": "asdf",
+    "users": [
+      {
+        "id": "1fdeb8a9-5903-4c32-9c9c-afba31d3bd4e"
+      }
+    ]
+  }
+}

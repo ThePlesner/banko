@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Song, songs } from './data';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  private url = `http://${environment.ip}:${environment.serverPort}/api/songs`;
   private readonly baseData = songs;
 
-  constructor() {}
+  constructor(private readonly httpClient: HttpClient) {}
 
-  public getAllSongs(): Song[] {
-    return this.shuffleArray(this.baseData);
+  public getAllSongs() {
+    return this.httpClient
+      .get<{ songs: Song[] }>(this.url)
+      .pipe(map((songs) => this.shuffleArray(songs.songs)));
+
+    // return this.shuffleArray(this.baseData);
   }
 
   private shuffleArray(array: Song[]): Song[] {

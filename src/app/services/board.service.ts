@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { Song } from './data';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,19 +9,22 @@ import { Song } from './data';
 export class BoardService {
   constructor(private readonly dataService: DataService) {}
 
-  public getRandomboard(): Song[][] {
-    const allSongs = this.dataService.getAllSongs();
-    const board = [];
+  public getRandomboard(): Observable<Song[][]> {
+    return this.dataService.getAllSongs().pipe(
+      map((songs) => {
+        const board = [];
 
-    let column = [];
-    for (let i = 0; i <= 15; i++) {
-      column.push(allSongs[i]);
+        let column = [];
+        for (let i = 0; i <= 15; i++) {
+          column.push(songs[i]);
 
-      if ((i + 1) % 5 === 0) {
-        board.push(column);
-        column = [];
-      }
-    }
-    return board;
+          if ((i + 1) % 5 === 0) {
+            board.push(column);
+            column = [];
+          }
+        }
+        return board;
+      })
+    );
   }
 }

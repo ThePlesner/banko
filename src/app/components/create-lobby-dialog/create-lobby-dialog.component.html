@@ -1,0 +1,7 @@
+<div class="dialog-container">
+  <label for="lobbyname">Lobby navn</label>
+  <input [formControl]="name" type="text" name="lobbyname">
+  <div (click)="submitName()" class="dialog-button">
+    <span>Opret</span>
+  </div>
+</div>

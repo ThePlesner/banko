@@ -1,0 +1,10 @@
+.dialog-container {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

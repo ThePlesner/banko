@@ -1,0 +1,27 @@
+<div class="lobby-container">
+  <div class="header">
+    <span class="lobby-header-text">Manko lobby</span>
+    <div (click)="createGame()" class="create-game-button">
+      <span>Opret spil</span>
+    </div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="games">
+    @for (game of games; track $index) {
+      <div class="lobby-card">
+        <div class="lobby-card-header">
+          Marks banko rum
+        </div>
+        <div class="lobby-body">
+          <p>Der er 8 spillere i dette rum</p>
+          <p>Spillet er ikke startet</p>
+        </div>
+        <div (click)="goToGame(game.gameId)" class="lobby-button">
+          <span>Hop ind!</span>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>
